@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.opened nav {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.opened #page, .opened header {
+  -webkit-transform: translate(40vw, 0);
+          transform: translate(40vw, 0);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.opened #logo, .opened #menuBtn {
+  -webkit-transform: translate(-40vw, 0);
+          transform: translate(-40vw, 0);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.opened header::after {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.closed nav {
+  -webkit-transform: translate(-40vw, 0);
+          transform: translate(-40vw, 0);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.closed #page, .closed header {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.closed #logo, .closed #menuBtn {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.closed header::after {
+  opacity: 0.9;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
+  z-index: 100;
+  border-radius: 0 0 5px 5px;
+}
+
+header #logo {
+  height: 32px;
+  margin: 0 15px 0 50px;
+}
+
+header #menuBtn {
+  cursor: pointer;
+}
+
+header #menuBtn:hover {
+  color: #a1a1a1;
+}
+
+header::after {
+  content: "";
+  background-image: url("../global-imgs/white-marble.jpg");
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+nav {
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  width: 40vw;
+  background-image: url("../global-imgs/img-nav.jpg");
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav #overNav {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 120px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+nav ul #navMarmaros {
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 0;
+  color: #464646;
+}
+
+nav ul #navMarmarosLinks {
+  height: 0px;
+  -webkit-transition: height 1s;
+  transition: height 1s;
+  overflow: hidden;
+}
+
+nav ul #hoverDivMarmarosNav:hover #navMarmarosLinks {
+  height: 170px;
+}
+
+nav ul #hoverDivMarmarosNav:hover #navMarmaros {
+  color: #a1a1a1;
+  text-decoration: underline;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  will-change: transform;
+}
+
+nav ul ul {
+  padding-left: 20px;
+}
+
+nav ul a {
+  color: #464646;
+  text-decoration: none;
+}
+
+nav ul a:hover, nav ul #navMarmaros:hover {
+  color: #a1a1a1;
+  text-decoration: underline;
+}
+
+nav li {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 0;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  will-change: transform;
+}
+
+nav li:hover {
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  will-change: transform;
+}
+
+#welcome {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../home-imgs/welcome-img.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+}
+
+#page {
+  width: 100%;
+}
+
+#page #overWelcome {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#page #welcomeInfos {
+  width: 50%;
+  max-width: 520px;
+  margin-left: 8%;
+  color: #f1f1f1;
+  padding-top: 32vh;
+}
+
+#page #welcomeInfos h1 {
+  font-size: 70px;
+  font-weight: 500;
+}
+
+#page #welcomeInfos h2 {
+  font-size: 32px;
+  font-weight: 300;
+  margin-left: 220px;
+}
+
+#page #welcomeInfos p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  max-width: 480px;
+}
+
+#page #homeProjects .homeImgsGroupe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#page #homeProjects .homeImgsGroupe > div {
+  height: 33.33vw;
+  width: 33.33vw;
+  overflow: hidden;
+}
+
+#page #homeProjects .homeImgsGroupe > div:hover .imgProject {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+#page #homeProjects .imgProject {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  will-change: transform;
+}
+
+#page #homeProjects #mandarinOrientalImg1 {
+  background-image: url("../home-imgs/mandarin1.jpg");
+}
+
+#page #homeProjects #mandarinOrientalImg2 {
+  background-image: url("../home-imgs/mandarin2.jpg");
+}
+
+#page #homeProjects #mandarinOrientalImg3 {
+  background-image: url("../home-imgs/mandarin3.jpg");
+}
+
+#page #homeProjects #palaisSelmanImg1 {
+  background-image: url("../home-imgs/selman1.jpg");
+  background-position-x: left;
+}
+
+#page #homeProjects #palaisSelmanImg2 {
+  background-image: url("../home-imgs/selman2.jpg");
+}
+
+#page #homeProjects #palaisSelmanImg3 {
+  background-image: url("../home-imgs/selman3.jpg");
+}
+
+#page #homeProjects #miamiPalmImg1 {
+  background-image: url("../home-imgs/palm1.jpg");
+}
+
+#page #homeProjects #miamiPalmImg2 {
+  background-image: url("../home-imgs/palm2.jpg");
+}
+
+#page #homeProjects #miamiPalmImg3 {
+  background-image: url("../home-imgs/palm3.jpg");
+}
+
+#page #homeProjects #sorrentoTritoneImg1 {
+  background-image: url("../home-imgs/sorrento1.jpg");
+}
+
+#page #homeProjects #sorrentoTritoneImg2 {
+  background-image: url("../home-imgs/sorrento2.jpg");
+}
+
+#page #homeProjects #sorrentoTritoneImg3 {
+  background-image: url("../home-imgs/sorrento3.jpeg");
+}
+
+#page #homeProjects #laReserveImg1 {
+  background-image: url("../home-imgs/reserve1.jpg");
+}
+
+#page #homeProjects #laReserveImg2 {
+  background-image: url("../home-imgs/reserve2.jpg");
+}
+
+#page #homeProjects #laReserveImg3 {
+  background-image: url("../home-imgs/reserve3.jpeg");
+}
+
+#page #homeProjects .projectName {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-top: -50px;
+  position: relative;
+}
+
+#page #homeProjects h4 {
+  padding-top: 14px;
+  font-weight: 300;
+}
+
+#page footer {
+  background-color: #0c0c0c;
+  color: #e9e9e9;
+  padding: 25px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=home.css.map */
